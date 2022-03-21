@@ -10,6 +10,11 @@ import shutil
 print("Dzięki współpracy pewnych dwóch typków nie musisz recznie instalowac bibliotek ani pobierać ręcznie plików.")
 input("A teraz klikaj enter i patrz jak sie instalują")
 
+def ulepsz_pip():
+    try:
+        os.system("python -m pip install --upgrade pip")
+    except:
+        os.system("pip install --upgrade pip")
 
 def instaluj_paczki():
     required = {'pandas-profiling', 'jupyter', 'notebook', 'jupyterlab', 'numpy', 'sklearn', 'xgboost', 'matplotlib'}
@@ -81,6 +86,7 @@ def pobierz_pliki():
         return 1
 
 def main():
+    ulepsz_pip()
     if instaluj_paczki() == 1 and pobierz_pliki() == 1:
         print("Wszystko pobrane i zainstalowane.")
     else:
