@@ -11,10 +11,8 @@ print("Dzięki współpracy pewnych dwóch typków nie musisz recznie instalowac
 input("A teraz klikaj enter i patrz jak sie instalują")
 
 def ulepsz_pip():
-    try:
-        os.system("python -m pip install --upgrade pip")
-    except:
-        os.system("pip install --upgrade pip")
+    os.system("python -m pip install --upgrade pip")
+    os.system("pip install --upgrade pip")
 
 def instaluj_paczki():
     required = {'pandas-profiling', 'jupyter', 'notebook', 'jupyterlab', 'numpy', 'sklearn', 'xgboost', 'matplotlib'}
