@@ -6,13 +6,15 @@ import subprocess
 import pkg_resources
 from zipfile import ZipFile
 import shutil
+import platform
 
 print("Dzięki współpracy pewnych dwóch typków nie musisz recznie instalowac bibliotek ani pobierać ręcznie plików.")
 input("A teraz klikaj enter i patrz jak sie instalują")
 
 def ulepsz_pip():
-    os.system("python -m pip install --upgrade pip")
-    os.system("pip install --upgrade pip")
+    if platform.system() == "Windows":
+        os.system("python -m pip install --upgrade pip")
+    else: os.system("pip install --upgrade pip")
 
 def instaluj_paczki():
     required = {'pandas-profiling', 'jupyter', 'notebook', 'jupyterlab', 'numpy', 'sklearn', 'xgboost', 'matplotlib'}
