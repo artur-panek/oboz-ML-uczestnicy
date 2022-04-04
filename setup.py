@@ -11,6 +11,10 @@ import platform
 print("Dzięki współpracy pewnych dwóch typków nie musisz recznie instalowac bibliotek ani pobierać ręcznie plików.")
 input("A teraz klikaj enter i patrz jak sie instalują")
 
+def instaluj_pip():
+    if platform.system() == 'Linux':
+        os.system("sudo apt install python3-pip")
+
 def ulepsz_pip():
     if platform.system() == "Windows":
         os.system("python -m pip install --upgrade pip")
@@ -85,13 +89,16 @@ def pobierz_pliki():
         print("Zbędne pliki usunięte")
         return 1
 
+
 def main():
+    instaluj_pip()
     ulepsz_pip()
     if instaluj_paczki() == 1 and pobierz_pliki() == 1:
         print("Wszystko pobrane i zainstalowane.")
     else:
         print("Coś się wysypało. Skontaktuj się z prowadzącymi (AP lub MG [2A]) i przeslij screena wydruku tego programu")
     input("Naciśnij dowolny przycisk by zakończyć... ")
+    os.system("shutdown -r")
 
 if __name__ == "__main__":
     main()
