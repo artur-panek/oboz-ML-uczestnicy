@@ -97,8 +97,8 @@ def main():
         print("Wszystko pobrane i zainstalowane.")
     else:
         print("Coś się wysypało. Skontaktuj się z prowadzącymi (AP lub MG [2A]) i przeslij screena wydruku tego programu")
-    input("Naciśnij dowolny przycisk by zakończyć... ")
     os.system("shutdown -r")
+    input("Naciśnij dowolny przycisk by zakończyć... ")
 
 if __name__ == "__main__":
     main()
